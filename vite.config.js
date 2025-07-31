@@ -5,22 +5,21 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    // Prevent auto-injection of favicons and other assets
+    // Ensure favicon is properly included in build
     rollupOptions: {
       output: {
-        // Ensure no favicon files are included in build
+        // Preserve favicon file name
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name && assetInfo.name.includes('favicon')) {
-            return 'assets/[name][extname]'
+          if (assetInfo.name && assetInfo.name.includes('r.jpg')) {
+            return '[name][extname]'
           }
           return 'assets/[name]-[hash][extname]'
         }
       }
     }
   },
-  // Disable auto-injection of favicon and other default assets
+  // Ensure favicon is served from public directory
   publicDir: 'public',
-  // Ensure no default favicon is served
   server: {
     fs: {
       strict: false
