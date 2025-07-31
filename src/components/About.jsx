@@ -1,66 +1,85 @@
 import React from "react";
-import Tilt from "react-tilt";
 import { motion } from "framer-motion";
-
-import { styles } from "../styles";
-import { services } from "../constants";
-import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
-
-const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className='xs:w-[250px] w-full'>
-    <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
-    >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
-      >
-        <img
-          src={icon}
-          alt='web-development'
-          className='w-16 h-16 object-contain'
-        />
-
-        <h3 className='text-white text-[20px] font-bold text-center'>
-          {title}
-        </h3>
-      </div>
-    </motion.div>
-  </Tilt>
-);
 
 const About = () => {
   return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
-      </motion.div>
+    <section id="about" className="min-h-screen flex items-center justify-center py-20">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 px-6">
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+          className="flex-shrink-0 flex justify-center"
+        >
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full blur-lg opacity-30"></div>
+            <img
+              src="/src/assets/rohan.jpg"
+              alt="Rohan Gottipati"
+              className="relative w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-blue-500 shadow-2xl"
+            />
+          </div>
+        </motion.div>
+        
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
+          className="flex-1 text-center md:text-left"
+        >
+          <motion.h2 
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-white text-3xl md:text-4xl font-bold mb-6"
+          >
+            About Me
+          </motion.h2>
+          
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="text-secondary text-lg md:text-xl leading-relaxed mb-6"
+          >
+            I'm a Computer Science student at Wilfrid Laurier University specializing in Big Data Systems and Data Analytics.
+          </motion.p>
+          
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            viewport={{ once: true }}
+            className="text-secondary text-lg md:text-xl leading-relaxed mb-8"
+          >
+            I love building full-stack and AI-powered tools that make life easier for others.
+          </motion.p>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
-      >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
-      </motion.p>
-
-      <div className='mt-20 flex flex-wrap gap-10'>
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
-        ))}
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap gap-3 justify-center md:justify-start"
+          >
+            <span className="px-4 py-2 bg-blue-500 bg-opacity-20 border border-blue-500 rounded-full text-blue-400 text-sm font-medium">
+              Full-Stack Dev
+            </span>
+            <span className="px-4 py-2 bg-blue-500 bg-opacity-20 border border-blue-500 rounded-full text-blue-400 text-sm font-medium">
+              AI Builder
+            </span>
+            <span className="px-4 py-2 bg-blue-500 bg-opacity-20 border border-blue-500 rounded-full text-blue-400 text-sm font-medium">
+              EdTech
+            </span>
+          </motion.div>
+        </motion.div>
       </div>
-    </>
+    </section>
   );
 };
 
-export default SectionWrapper(About, "about");
+export default About;

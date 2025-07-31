@@ -1,48 +1,119 @@
+import React from "react";
 import { motion } from "framer-motion";
-
-import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
+import Typewriter from "./Typewriter";
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileAlt } from "react-icons/fa";
 
 const Hero = () => {
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
-      <div
-        className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
-      >
-        <div className='flex flex-col justify-center items-center mt-5'>
-          <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
-          <div className='w-1 sm:h-80 h-40 violet-gradient' />
-        </div>
-
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#915EFF]'>Adrian</span>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop 3D visuals, user <br className='sm:block hidden' />
-            interfaces and web applications
-          </p>
-        </div>
-      </div>
-
-      <ComputersCanvas />
-
-      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
-        <a href='#about'>
-          <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className='w-3 h-3 rounded-full bg-secondary mb-1'
+    <section className="relative w-full min-h-screen flex items-center justify-center bg-black">
+      <div className="text-center w-full flex flex-col items-center justify-center">
+        {/* Typing Animation */}
+        <motion.div
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.3, ease: [0, 0.71, 0.2, 1.01] }}
+          className="mb-8"
+        >
+          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <Typewriter 
+              text="Hey! I'm Rohan Gottipati" 
+              speed={35}
             />
           </div>
-        </a>
+        </motion.div>
+        
+        {/* Social Icons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.5, ease: "easeOut" }}
+          className="flex justify-center space-x-6 mb-12"
+        >
+          <motion.a
+            href="https://github.com/RohanGottipati"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-800 transition-colors duration-300"
+          >
+            <FaGithub className="text-gray-300 text-xl hover:text-white transition-colors duration-300" />
+          </motion.a>
+          
+          <motion.a
+            href="https://www.linkedin.com/in/rohan-gottipati-9b5374378/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-800 transition-colors duration-300"
+          >
+            <FaLinkedin className="text-gray-300 text-xl hover:text-white transition-colors duration-300" />
+          </motion.a>
+          
+          <motion.a
+            href="mailto:rohan.gottipati@gmail.com"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-800 transition-colors duration-300"
+          >
+            <FaEnvelope className="text-gray-300 text-xl hover:text-white transition-colors duration-300" />
+          </motion.a>
+          
+          <motion.a
+            href="/Rohan_Gottipati_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-800 transition-colors duration-300"
+          >
+            <FaFileAlt className="text-gray-300 text-xl hover:text-white transition-colors duration-300" />
+          </motion.a>
+        </motion.div>
+
+        {/* Scroll Arrow */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 2.0 }}
+          className="mt-8"
+        >
+          <motion.div
+            animate={{
+              y: [0, 10, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="cursor-pointer"
+            onClick={scrollToAbout}
+          >
+            <svg
+              className="w-8 h-8 text-blue-800 hover:text-blue-700 transition-colors duration-300"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

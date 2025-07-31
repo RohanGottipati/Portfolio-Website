@@ -3,18 +3,6 @@ import {
   backend,
   creator,
   web,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
   meta,
   starbucks,
   tesla,
@@ -22,21 +10,28 @@ import {
   carrent,
   jobit,
   tripguide,
-  threejs,
 } from "../assets";
 
 export const navLinks = [
   {
-    id: "about",
-    title: "About",
+    id: "home",
+    title: "Home",
   },
   {
-    id: "work",
-    title: "Work",
+    id: "projects",
+    title: "Projects",
+  },
+  {
+    id: "experience",
+    title: "Experience",
   },
   {
     id: "contact",
-    title: "Contact",
+    title: "Contact Me",
+  },
+  {
+    id: "resume",
+    title: "Resume",
   },
 ];
 
@@ -61,110 +56,98 @@ const services = [
 
 const technologies = [
   {
-    name: "HTML 5",
-    icon: html,
+    name: "Python",
+    icon: "/logos/python.svg",
   },
   {
-    name: "CSS 3",
-    icon: css,
+    name: "Java",
+    icon: "/logos/java.svg",
   },
   {
-    name: "JavaScript",
-    icon: javascript,
+    name: "R",
+    icon: "/logos/r.svg",
   },
   {
-    name: "TypeScript",
-    icon: typescript,
+    name: "C",
+    icon: "/logos/c.svg",
   },
   {
-    name: "React JS",
-    icon: reactjs,
+    name: "SQL",
+    icon: "/logos/sql.svg",
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
+    name: "React",
+    icon: "/src/assets/tech/reactjs.png",
+  },
+  {
+    name: "HTML",
+    icon: "/src/assets/tech/html.png",
+  },
+  {
+    name: "CSS",
+    icon: "/src/assets/tech/css.png",
+  },
+  {
+    name: "Matlab",
+    icon: "/logos/matlab.svg",
+  },
+  {
+    name: "Flask",
+    icon: "/logos/flask.svg",
+  },
+  {
+    name: "Pandas",
+    icon: "/logos/pandas.svg",
+  },
+  {
+    name: "NumPy",
+    icon: "/logos/numpy.svg",
   },
   {
     name: "Tailwind CSS",
-    icon: tailwind,
+    icon: "/src/assets/tech/tailwind.png",
   },
   {
-    name: "Node JS",
-    icon: nodejs,
+    name: "Git",
+    icon: "/src/assets/tech/git.png",
   },
   {
-    name: "MongoDB",
-    icon: mongodb,
+    name: "GitHub",
+    icon: "/logos/github.svg",
   },
   {
-    name: "Three JS",
-    icon: threejs,
+    name: "OpenAI API",
+    icon: "/logos/openai.svg",
   },
   {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
+    name: "Jupyter Notebook",
+    icon: "/logos/jupyter.svg",
   },
 ];
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
+    title: "Co-Founder, Software Development Lead",
+    company_name: "TeachTrack AI",
     icon: starbucks,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "Jan 2025 – Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Built an AI platform with Flask and React to automate student learning gap analysis",
+      "Created real-time dashboards and data pipelines that save teachers 12+ hours/week",
+      "Improved AI accuracy by 30% using iterative educator feedback",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
+    title: "Math and Coding Tutor",
+    company_name: "Varsity Tutors",
     icon: tesla,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Nov 2024 – Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Tutored students in Python, Java, and algorithm problem solving",
+      "Designed custom programming projects to build real-world skills",
+      "Advised students on AI and software development career paths",
     ],
   },
 ];
@@ -198,20 +181,20 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "TeachTrack AI",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "AI-powered EdTech platform built with Flask and React. Automatically identifies student learning gaps and generates real-time dashboards for teachers.",
     tags: [
       {
-        name: "react",
+        name: "Python",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Flask",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "React",
         color: "pink-text-gradient",
       },
     ],
@@ -219,20 +202,20 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "Job IT",
+    name: "AI Resume Analyzer",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "A tool using OpenAI + Flask + React to generate ATS-optimized feedback on student resumes. Highlights formatting issues, keyword gaps, and degree relevance.",
     tags: [
       {
-        name: "react",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "Flask",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "OpenAI API",
         color: "pink-text-gradient",
       },
     ],
@@ -240,20 +223,41 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
-    name: "Trip Guide",
+    name: "Visual Job Application Tracker",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A job tracker web app with filtering and real-time visual updates. Helps students manage roles, companies, and interview progress.",
     tags: [
       {
-        name: "nextjs",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "Node.js",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "Tailwind CSS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: tripguide,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Interactive Job Market Dashboard",
+    description:
+      "Real-time dashboard with public job data visualizations (salary trends, roles, locations). Built with Chart.js and React.",
+    tags: [
+      {
+        name: "React",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Chart.js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Node.js",
         color: "pink-text-gradient",
       },
     ],
@@ -262,4 +266,16 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+const education = [
+  {
+    school_name: "Wilfrid Laurier University",
+    degree: "Bachelor of Computer Science",
+    date: "Waterloo, ON | Sept 2024 – Apr 2028",
+    points: [
+      "Concentration in Big Data Systems",
+      "Option in Data Analytics",
+    ],
+  },
+];
+
+export { services, technologies, experiences, testimonials, projects, education };
