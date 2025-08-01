@@ -15,7 +15,7 @@ const About = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full blur-lg opacity-30"></div>
             <img
-              src="/src/assets/rohan.jpg"
+              src="/rohan.jpg"
               alt="Rohan Gottipati"
               className="relative w-48 h-48 md:w-56 md:h-56 rounded-full object-cover border-4 border-blue-500 shadow-2xl"
             />
