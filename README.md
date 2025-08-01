@@ -11,3 +11,6 @@ EmailJS
 Interactive project and skill cards
 Live contact form
 Fully responsive
+
+Inspiration taken from JS Mastery
+
